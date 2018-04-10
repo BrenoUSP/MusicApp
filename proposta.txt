@@ -1,0 +1,17 @@
+- Introdução
+
+    (PARÁGRAFO - COMENTAR SOBRE ENSINO DA MÚSICA. ENSINO DA MÚSICA POR MEIO DE SOFTWARE E ETC) // yousician // jogos(rock band…)  *Feedback*
+    O projeto visa à criação de um software voltado para dispositivos mobile em que se possa introduzir conceitos musicais por meio de métodos interativos. Esses métodos consistem em permitir o usuário entender o aprendizado e formação de uma música por meio de interações com a tela do celular e um mecanismo similar a um teclado.
+
+- Objetivo geral
+    
+    O objetivo desse projeto é implementar um software que possa introduzir conhecimentos musicais ao usuário de forma interativa.
+    
+- Descrição do Software
+
+Tela 1 - Introdução ao conhecimento musical por meio de informações. A absorção das informações pelo usuário será validada se utilizando de questionários e o teclado (DAR NOME PARA ESSE TECLADO SEJA COM ARDUINO OU OUTRO DISPOSITIVO).    
+Tela 2 - Aprendizado de músicas se utilizando da visualização da tela e a repetição do que é visto no teclado. 
+Tela 3 - Formação de músicas por meio de mais informações. A absorção das informações será validada de forma análoga à Tela 1.
+Tela 4 - (ALGUMA COISA DE INCLUSÃO SOCIAL SERIA INTERESSANTE).
+
+- Metodologia de execução (Ao trabalhar fora da universidade para comprovar a eficácia do software)

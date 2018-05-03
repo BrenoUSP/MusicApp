@@ -22,8 +22,8 @@
         <activity
             android:name=".InfoActivity"
             android:label="Info"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".IntroActivity"></activity>
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
@@ -33,6 +34,21 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button but = (Button) findViewById(R.id.button);
+        but.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+                Toast toast = Toast.makeText(getApplicationContext(), "Logado", Toast.LENGTH_LONG);
+                toast.show();
+
+                Intent intent = new Intent(LoginActivity.this, IntroActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="efestus.musication">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/clefencil_icon"
@@ -31,7 +35,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".lvl2_notmus_1" />
-        <activity android:name=".lvl2_notmus_2"></activity>
+        <activity android:name=".lvl2_notmus_2" />
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,8 @@
 package efestus.musication;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,9 +12,12 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
+
+    SQLiteDatabase usersDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +25,20 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        usersDB = openOrCreateDatabase("users.db", MODE_PRIVATE, null);
+
+        usersDB.execSQL(
+                "CREATE TABLE IF NOT EXISTS user (name VARCHAR(200), image BITMAP)"
+        );
+
+        Cursor myCursor = usersDB.rawQuery("select name, image from user", null);
+
+        EditText username = (EditText) findViewById(R.id.editText);
+
+        username.setText(myCursor.getString(0));
+
+        myCursor.close();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

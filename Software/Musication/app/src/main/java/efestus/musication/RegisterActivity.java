@@ -1,9 +1,8 @@
 package efestus.musication;
 
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -19,17 +18,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
-
 import java.io.IOException;
 
 public class RegisterActivity extends AppCompatActivity {
 
     ImageView imageView;
 
-    private int REQUEST_CODE = 1;
+    String imagePath;
 
-    SQLiteDatabase usersDB;
+    private int REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +34,6 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         imageView = (ImageView) findViewById(R.id.imageView);
-
-        usersDB = openOrCreateDatabase("users.db", MODE_PRIVATE, null);
 
 
         Button but = (Button) findViewById(R.id.button1);
@@ -73,11 +68,13 @@ public class RegisterActivity extends AppCompatActivity {
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
                 } else {
-                    ContentValues row = new ContentValues();
-                    row.put("name", username.getText().toString());
-                    row.put("image", "imageView.getDrawable()");
-                    usersDB.insert("user", null, row);
-                    usersDB.close();
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                    SharedPreferences.Editor editor = pref.edit();
+
+                    editor.putString("username", username.getText().toString()); // Storing string
+                    editor.putString("image", imagePath); // Storing string
+
+                    editor.commit(); // commit changes
                 }
             }
         });
@@ -89,6 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK && data != null && data.getData() != null){
             Uri uri = data.getData();
+            imagePath = uri.getPath();
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 bitmap = getCroppedBitmap(bitmap);

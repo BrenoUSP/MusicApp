@@ -1,11 +1,9 @@
 package efestus.musication;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -13,11 +11,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    SQLiteDatabase usersDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,19 +24,10 @@ public class LoginActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        usersDB = openOrCreateDatabase("users.db", MODE_PRIVATE, null);
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
 
-        usersDB.execSQL(
-                "CREATE TABLE IF NOT EXISTS user (name VARCHAR(200), image BITMAP)"
-        );
-
-        Cursor myCursor = usersDB.rawQuery("select name, image from user", null);
-
-        EditText username = (EditText) findViewById(R.id.editText);
-
-        username.setText(myCursor.getString(0));
-
-        myCursor.close();
+        TextView textView = (TextView) findViewById(R.id.textView13);
+        textView.setText(pref.getString("username", ""));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

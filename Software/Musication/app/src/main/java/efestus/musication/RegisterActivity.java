@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -14,17 +15,21 @@ import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class RegisterActivity extends AppCompatActivity {
 
     ImageView imageView;
 
-    String imagePath;
+    Bitmap bitmapFinal;
 
     private int REQUEST_CODE = 1;
 
@@ -52,9 +57,9 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText username = (EditText) findViewById(R.id.editText);
-                if(username.getText().length() < 4 || username.getText().length() > 12){
+                if(username.getText().length() < 4 || username.getText().length() > 12 || username.getText().toString().contains(" ")){
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(RegisterActivity.this);
-                    builder1.setMessage("O Nome do usuário deve ter entre 4 e 12 letras!.");
+                    builder1.setMessage("O Nome do usuário deve ter entre 4 e 12 letras!. Sem espaços!");
                     builder1.setCancelable(true);
 
                     builder1.setPositiveButton(
@@ -72,9 +77,26 @@ public class RegisterActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = pref.edit();
 
                     editor.putString("username", username.getText().toString()); // Storing string
-                    editor.putString("image", imagePath); // Storing string
+
+                    String encodedImage = "";
+
+                    if(bitmapFinal != null){
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        bitmapFinal.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                        byte[] b = baos.toByteArray();
+
+                        encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
+                    }
+
+                    editor.putString("image", encodedImage); // Storing string
 
                     editor.commit(); // commit changes
+
+                    Toast toast = Toast.makeText(getApplicationContext(), "Usuário registrado", Toast.LENGTH_LONG);
+                    toast.show();
+
+                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -86,11 +108,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK && data != null && data.getData() != null){
             Uri uri = data.getData();
-            imagePath = uri.getPath();
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-                bitmap = getCroppedBitmap(bitmap);
-                imageView.setImageBitmap(bitmap);
+                bitmapFinal = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                bitmapFinal = getCroppedBitmap(bitmapFinal);
+                imageView.setImageBitmap(bitmapFinal);
             } catch (IOException e){
                 e.printStackTrace();
             }

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -14,12 +13,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.File;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -59,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button but = (Button) findViewById(R.id.button);
+        Button but = (Button) findViewById(R.id.button2);
         but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,14 +66,26 @@ public class LoginActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(), "Olá, " + pref.getString("username", "") , Toast.LENGTH_LONG);
                     toast.show();
 
-                    Intent intent = new Intent(LoginActivity.this, IntroActivity.class);
-                    startActivity(intent);
+                    Intent intent;
+
+                    switch(pref.getInt("level", 0)){
+                        case 0:
+                            intent = new Intent(LoginActivity.this, IntroActivity.class);
+                            startActivity(intent);
+                            break;
+                        case 1:
+                            intent = new Intent(LoginActivity.this, lvl1_content.class);
+                            startActivity(intent);
+                            break;
+
+                    }
+
                 }
 
             }
         });
 
-        Button but2 = (Button) findViewById(R.id.button2);
+        Button but2 = (Button) findViewById(R.id.button3);
         but2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

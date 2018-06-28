@@ -4,7 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -52,7 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        Button but2 = (Button) findViewById(R.id.button2);
+        Button but2 = (Button) findViewById(R.id.button3);
         but2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +75,13 @@ public class RegisterActivity extends AppCompatActivity {
                     SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
                     SharedPreferences.Editor editor = pref.edit();
 
+                    editor.clear();
+
+                    editor.commit();
+
                     editor.putString("username", username.getText().toString()); // Storing string
+
+                    editor.putInt("level", 0);
 
                     String encodedImage = "";
 

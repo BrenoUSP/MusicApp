@@ -1,15 +1,13 @@
 package efestus.musication;
 
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -33,7 +31,7 @@ public class lvl2_notmus_2 extends AppCompatActivity {
         Button but1 = (Button) findViewById(R.id.button5);
         Button but2 = (Button) findViewById(R.id.button4);
         Button but3 = (Button) findViewById(R.id.button3);
-        Button but4 = (Button) findViewById(R.id.button2);
+        Button but4 = (Button) findViewById(R.id.button3);
         Button but5 = (Button) findViewById(R.id.button1);
 
         switch (but) {
@@ -100,7 +98,7 @@ public class lvl2_notmus_2 extends AppCompatActivity {
         Button but1 = (Button) findViewById(R.id.button5);
         Button but2 = (Button) findViewById(R.id.button4);
         Button but3 = (Button) findViewById(R.id.button3);
-        Button but4 = (Button) findViewById(R.id.button2);
+        Button but4 = (Button) findViewById(R.id.button3);
         Button but5 = (Button) findViewById(R.id.button1);
 
         int[] vet = new int[7];
@@ -228,89 +226,135 @@ public class lvl2_notmus_2 extends AppCompatActivity {
         switch(textNote){
             case "C":
                 if (butText.equals("dó")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
             case "D":
                 if (butText.equals("ré")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
             case "E":
                 if (butText.equals("mi")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
             case "F":
                 if (butText.equals("fá")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
             case "G":
                 if (butText.equals("sol")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
             case "A":
                 if (butText.equals("lá")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
             case "B":
                 if (butText.equals("si")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
             case "dó":
                 if (butText.equals("C")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
             case "ré":
                 if (butText.equals("D")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
             case "mi":
                 if (butText.equals("E")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
             case "fá":
                 if (butText.equals("F")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
             case "sol":
                 if (butText.equals("G")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
             case "lá":
                 if (butText.equals("A")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
             case "si":
                 if (butText.equals("B")){
-                    // FORMATA TUDO
                     points++;
                 }
                 break;
         }
+    }
+
+    public void check(String but){
+        questions++;
+
+        Button but6 = (Button) findViewById(R.id.button6);
+
+        String textNote = ((TextView) findViewById(R.id.textView1)).getText().toString();
+        String butText = but;
+
+        compareNotes(textNote, butText);
+
+        if(questions == 5){
+
+            if(points == 5){
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(lvl2_notmus_2.this);
+                builder1.setMessage("Você acertou as questões! Pode continuar no estudo.");
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+
+                but6.setVisibility(View.VISIBLE);
+
+                SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+
+                SharedPreferences.Editor editor = pref.edit();
+
+                editor.putInt("lvl2_notmus_2", 1);
+                editor.commit();
+            } else {
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(lvl2_notmus_2.this);
+                builder1.setMessage("Você errou pelo menos uma questão. Comece novamente!");
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+            }
+            questions = 0;
+            points = 0;
+        } else {
+            newNoteBut();
+        }
+
     }
 
     @Override
@@ -318,35 +362,54 @@ public class lvl2_notmus_2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lvl2_notmus_2);
 
-        Button but1 = (Button) findViewById(R.id.button5);
-        Button but2 = (Button) findViewById(R.id.button4);
-        Button but3 = (Button) findViewById(R.id.button3);
-        Button but4 = (Button) findViewById(R.id.button2);
-        Button but5 = (Button) findViewById(R.id.button1);
+        final Button but1 = (Button) findViewById(R.id.button5);
+        final Button but2 = (Button) findViewById(R.id.button4);
+        final Button but3 = (Button) findViewById(R.id.button3);
+        final Button but4 = (Button) findViewById(R.id.button3);
+        final Button but5 = (Button) findViewById(R.id.button1);
+        Button but6 = (Button) findViewById(R.id.button6);
+
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+
+        if (pref.getInt("lvl2_notmus_2", 0) == 1){
+            but6.setVisibility(View.VISIBLE);
+        }
 
         newNoteBut();
 
         but1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                questions++;
-
-                //String textNote = ((TextView) findViewById(R.id.textView1)).getText().toString();
-               // String butText = but1.getText().toString();
-
-                //compareNotes(textNote, butText);
-
-                if(questions == 5){
-                    // INDICA A PONTUAÇÃO E VÊ SE PODE IR PRA PRÓXIMA TELA
-                } else {
-
-                }
-
-                SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-
-
+                check(but1.getText().toString());
             }
         });
 
+        but2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                check(but2.getText().toString());
+            }
+        });
+
+        but3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                check(but3.getText().toString());
+            }
+        });
+
+        but4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                check(but4.getText().toString());
+            }
+        });
+
+        but5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                check(but5.getText().toString());
+            }
+        });
     }
 }

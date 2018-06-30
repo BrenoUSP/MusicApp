@@ -39,6 +39,11 @@
         <activity android:name=".RegisterActivity" />
         <activity
             android:name=".lvl1_content"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".lvl1_teomus_1" />
+        <activity android:name=".lvl1_teomus_2" />
+        <activity
+            android:name=".lvl2_content"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>

@@ -83,6 +83,12 @@ public class RegisterActivity extends AppCompatActivity {
 
                     editor.putInt("level", 0);
 
+                    editor.putInt("level_instr", 0);
+
+                    editor.putInt("level_teomus", 0);
+
+                    editor.putInt("level_genre", 0);
+
                     String encodedImage = "";
 
                     if(bitmapFinal != null){

@@ -31,7 +31,7 @@ public class lvl2_notmus_2 extends AppCompatActivity {
         Button but1 = (Button) findViewById(R.id.button5);
         Button but2 = (Button) findViewById(R.id.button4);
         Button but3 = (Button) findViewById(R.id.button3);
-        Button but4 = (Button) findViewById(R.id.button3);
+        Button but4 = (Button) findViewById(R.id.button2);
         Button but5 = (Button) findViewById(R.id.button1);
 
         switch (but) {
@@ -98,7 +98,7 @@ public class lvl2_notmus_2 extends AppCompatActivity {
         Button but1 = (Button) findViewById(R.id.button5);
         Button but2 = (Button) findViewById(R.id.button4);
         Button but3 = (Button) findViewById(R.id.button3);
-        Button but4 = (Button) findViewById(R.id.button3);
+        Button but4 = (Button) findViewById(R.id.button2);
         Button but5 = (Button) findViewById(R.id.button1);
 
         int[] vet = new int[7];
@@ -365,7 +365,7 @@ public class lvl2_notmus_2 extends AppCompatActivity {
         final Button but1 = (Button) findViewById(R.id.button5);
         final Button but2 = (Button) findViewById(R.id.button4);
         final Button but3 = (Button) findViewById(R.id.button3);
-        final Button but4 = (Button) findViewById(R.id.button3);
+        final Button but4 = (Button) findViewById(R.id.button2);
         final Button but5 = (Button) findViewById(R.id.button1);
         Button but6 = (Button) findViewById(R.id.button6);
 

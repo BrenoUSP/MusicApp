@@ -1,6 +1,7 @@
 package efestus.musication;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -409,6 +410,14 @@ public class lvl2_notmus_2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 check(but5.getText().toString());
+            }
+        });
+
+        but6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(lvl2_notmus_2.this, lvl2_notmus_3.class);
+                startActivity(intent);
             }
         });
     }

@@ -1,6 +1,7 @@
 package efestus.musication;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -89,7 +90,54 @@ public class lvl2_notmus_4 extends AppCompatActivity {
                 break;
         }
 
+        Button but = (Button) findViewById(R.id.button);
+        but.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int radioButtonID = radioGroup.getCheckedRadioButtonId();
 
+                if(radioButtonID >= 0){
+                    View radioButton = radioGroup.findViewById(radioButtonID);
+                    int idx = radioGroup.indexOfChild(radioButton);
+                    RadioButton r = (RadioButton)  radioGroup.getChildAt(idx);
+
+                    if(r.equals(radioBut1)){
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(lvl2_notmus_4.this);
+                        builder1.setMessage("Resposta correta!");
+
+                        builder1.setCancelable(true);
+
+                        builder1.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+
+                                Intent intent = new Intent(lvl2_notmus_4.this, lvl2_notmus_5.class);
+                                startActivity(intent);
+                            }
+                        });
+
+                        AlertDialog alert11 = builder1.create();
+                        alert11.show();
+
+                    } else {
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(lvl2_notmus_4.this);
+                        builder1.setMessage("Resposta incorreta!");
+
+                        builder1.setCancelable(true);
+
+                        builder1.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                        AlertDialog alert11 = builder1.create();
+                        alert11.show();
+                    }
+                }
+
+            }
+        });
 
     }
 }

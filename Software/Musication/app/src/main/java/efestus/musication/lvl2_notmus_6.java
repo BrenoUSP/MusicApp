@@ -1,6 +1,8 @@
 package efestus.musication;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,16 +13,18 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class lvl2_notmus_6 extends AppCompatActivity {
-    Button but1 = (Button) findViewById(R.id.button5);
-    Button but2 = (Button) findViewById(R.id.button4);
-    Button but3 = (Button) findViewById(R.id.button3);
-    Button but4 = (Button) findViewById(R.id.button2);
-    Button but5 = (Button) findViewById(R.id.button1);
-    Button but6 = (Button) findViewById(R.id.button6);
+
 
     public void generateQuestion(int q){
         TextView textView1 = (TextView) findViewById(R.id.textView1);
         TextView textView2 = (TextView) findViewById(R.id.textView2);
+
+        Button but1 = (Button) findViewById(R.id.button5);
+        Button but2 = (Button) findViewById(R.id.button4);
+        Button but3 = (Button) findViewById(R.id.button3);
+        Button but4 = (Button) findViewById(R.id.button2);
+        Button but5 = (Button) findViewById(R.id.button1);
+        Button but6 = (Button) findViewById(R.id.button6);
 
         switch(q){
             case 0:
@@ -88,6 +92,19 @@ public class lvl2_notmus_6 extends AppCompatActivity {
 
         generateQuestion(q);
 
+        final Button but1 = (Button) findViewById(R.id.button5);
+        final Button but2 = (Button) findViewById(R.id.button4);
+        final Button but3 = (Button) findViewById(R.id.button3);
+        final Button but4 = (Button) findViewById(R.id.button2);
+        final Button but5 = (Button) findViewById(R.id.button1);
+        final Button but6 = (Button) findViewById(R.id.button6);
+
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+
+        if(pref.getInt("lvl2_notmus_6", 0) == 1){
+            but6.setVisibility(View.VISIBLE);
+        }
+
         but1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,6 +112,13 @@ public class lvl2_notmus_6 extends AppCompatActivity {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(lvl2_notmus_6.this);
                     builder1.setMessage("Resposta correta!");
                     builder1.setCancelable(true);
+
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+
+                    SharedPreferences.Editor editor = pref.edit();
+
+                    editor.putInt("lvl2_notmus_6", 1);
+                    editor.commit();
 
                     builder1.setPositiveButton(
                             "Ok",
@@ -134,6 +158,13 @@ public class lvl2_notmus_6 extends AppCompatActivity {
                     builder1.setMessage("Resposta correta!");
                     builder1.setCancelable(true);
 
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+
+                    SharedPreferences.Editor editor = pref.edit();
+
+                    editor.putInt("lvl2_notmus_6", 1);
+                    editor.commit();
+
                     builder1.setPositiveButton(
                             "Ok",
                             new DialogInterface.OnClickListener() {
@@ -148,6 +179,7 @@ public class lvl2_notmus_6 extends AppCompatActivity {
                 } else {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(lvl2_notmus_6.this);
                     builder1.setMessage("Resposta incorreta!");
+
                     builder1.setCancelable(true);
 
                     builder1.setPositiveButton(
@@ -172,11 +204,19 @@ public class lvl2_notmus_6 extends AppCompatActivity {
                     builder1.setMessage("Resposta correta!");
                     builder1.setCancelable(true);
 
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+
+                    SharedPreferences.Editor editor = pref.edit();
+
+                    editor.putInt("lvl2_notmus_6", 1);
+                    editor.commit();
+
                     builder1.setPositiveButton(
                             "Ok",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     dialog.cancel();
+
                                     but6.setVisibility(View.VISIBLE);
                                 }
                             });
@@ -209,6 +249,13 @@ public class lvl2_notmus_6 extends AppCompatActivity {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(lvl2_notmus_6.this);
                     builder1.setMessage("Resposta correta!");
                     builder1.setCancelable(true);
+
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+
+                    SharedPreferences.Editor editor = pref.edit();
+
+                    editor.putInt("lvl2_notmus_6", 1);
+                    editor.commit();
 
                     builder1.setPositiveButton(
                             "Ok",
@@ -248,6 +295,13 @@ public class lvl2_notmus_6 extends AppCompatActivity {
                     builder1.setMessage("Resposta correta!");
                     builder1.setCancelable(true);
 
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+
+                    SharedPreferences.Editor editor = pref.edit();
+
+                    editor.putInt("lvl2_notmus_6", 1);
+                    editor.commit();
+
                     builder1.setPositiveButton(
                             "Ok",
                             new DialogInterface.OnClickListener() {
@@ -275,6 +329,14 @@ public class lvl2_notmus_6 extends AppCompatActivity {
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
                 }
+            }
+        });
+
+        but6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(lvl2_notmus_6.this, lvl2_notmus_7.class);
+                startActivity(intent);
             }
         });
 

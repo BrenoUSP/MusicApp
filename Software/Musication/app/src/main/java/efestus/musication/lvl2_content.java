@@ -133,5 +133,19 @@ public class lvl2_content extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button but6 = (Button) findViewById(R.id.button6);
+        if(pref.getInt("level", 0) > 2){
+            but6.setVisibility(View.VISIBLE);
+        }
+
+        but6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(lvl2_content.this, lvl3_content.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

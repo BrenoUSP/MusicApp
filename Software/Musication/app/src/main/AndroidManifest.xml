@@ -48,7 +48,12 @@
         <activity android:name=".lvl2_notmus_3" />
         <activity android:name=".lvl2_notmus_4" />
         <activity android:name=".lvl2_notmus_5" />
-        <activity android:name=".lvl2_notmus_6"></activity>
+        <activity android:name=".lvl2_notmus_6" />
+        <activity android:name=".lvl2_notmus_7" />
+        <activity android:name=".lvl2_notmus_8" />
+        <activity
+            android:name=".lvl3_content"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

@@ -81,7 +81,10 @@ public class LoginActivity extends AppCompatActivity {
                             intent = new Intent(LoginActivity.this, lvl2_content.class);
                             startActivity(intent);
                             break;
-
+                        case 3:
+                            intent = new Intent(LoginActivity.this, lvl3_content.class);
+                            startActivity(intent);
+                            break;
                     }
 
                 }

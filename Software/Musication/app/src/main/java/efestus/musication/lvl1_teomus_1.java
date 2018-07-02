@@ -47,6 +47,7 @@ public class lvl1_teomus_1 extends AppCompatActivity {
 
                 if(pref.getInt("level_teomus", 0) == 0){
                     editor.putInt("level_teomus", 2);
+                    editor.commit();
                 }
 
                 if(pref.getInt("level", 0) == 1){

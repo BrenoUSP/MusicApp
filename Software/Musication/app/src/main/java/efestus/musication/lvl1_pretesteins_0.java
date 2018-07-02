@@ -47,6 +47,7 @@ public class lvl1_pretesteins_0 extends AppCompatActivity {
 
                 if(pref.getInt("level_instr", 0) == 0){
                     editor.putInt("level_instr", 2);
+                    editor.commit();
                 }
 
                 if(pref.getInt("level", 0) == 1){

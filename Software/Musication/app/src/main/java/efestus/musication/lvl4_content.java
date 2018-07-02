@@ -39,6 +39,7 @@ public class lvl4_content extends AppCompatActivity {
         but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 //Intent intent = new Intent(lvl4_content.this, lvl3_part_1.class); VAI PRO RITMO
                 //startActivity(intent);
             }

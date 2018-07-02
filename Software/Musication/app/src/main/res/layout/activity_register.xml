@@ -89,7 +89,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Entre 4 e 12 letras:"
+        android:text="Entre 4 e 10 letras:"
         android:textColor="@android:color/background_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

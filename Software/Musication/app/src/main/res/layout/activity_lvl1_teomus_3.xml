@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".lvl1_teomus_2">
-
+    tools:context=".lvl1_teomus_3">
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -45,6 +44,12 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.017" />
 
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/lvl3_part_img7" />
+
             <TextView
                 android:id="@+id/textView27"
                 android:layout_width="match_parent"
@@ -55,7 +60,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Nota 2 tons e meio a direita de sol."
+                android:text="Primeira nota no compasso"
                 android:textColor="@android:color/background_dark"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -76,35 +81,35 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="A#" />
+                    android:text="G" />
 
                 <RadioButton
                     android:id="@+id/radioButton2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="D" />
+                    android:text="E" />
 
                 <RadioButton
                     android:id="@+id/radioButton3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="E" />
+                    android:text="A" />
 
                 <RadioButton
                     android:id="@+id/radioButton4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Cb" />
+                    android:text="C" />
 
                 <RadioButton
                     android:id="@+id/radioButton5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="B#" />
+                    android:text="G" />
             </RadioGroup>
 
             <TextView
@@ -117,7 +122,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Nota 5 semitons a esquerda de fá."
+                android:text="Penúltima nota no compasso"
                 android:textColor="@android:color/background_dark"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -146,7 +151,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="D" />
+                    android:text="G" />
 
                 <RadioButton
                     android:id="@+id/radioButton23"
@@ -160,14 +165,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Cb" />
+                    android:text="A" />
 
                 <RadioButton
                     android:id="@+id/radioButton25"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="B" />
+                    android:text="D" />
             </RadioGroup>
 
             <TextView
@@ -180,7 +185,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="D#b pode representar qual nota?"
+                android:text="Última nota no compasso"
                 android:textColor="@android:color/background_dark"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -216,7 +221,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="C" />
+                    android:text="A" />
 
                 <RadioButton
                     android:id="@+id/radioButton34"
@@ -230,7 +235,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="A" />
+                    android:text="G" />
             </RadioGroup>
 
             <TextView
@@ -243,7 +248,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Cbb pode representar qual nota? "
+                android:text="Qual o tipo da primeira nota?"
                 android:textColor="@android:color/background_dark"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -265,35 +270,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="B" />
+                    android:text="Fusa" />
 
                 <RadioButton
                     android:id="@+id/radioButton42"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Bb" />
+                    android:text="Colcheia" />
 
                 <RadioButton
                     android:id="@+id/radioButton43"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="D" />
+                    android:text="Semi-Colcheia" />
 
-                <RadioButton
-                    android:id="@+id/radioButton44"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Cb" />
-
-                <RadioButton
-                    android:id="@+id/radioButton45"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="A" />
             </RadioGroup>
 
             <TextView
@@ -306,7 +298,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="3 tons mais 2 semitons equivalem a"
+                android:text="Qual clave se trata?"
                 android:textColor="@android:color/background_dark"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -328,296 +320,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="8 sustenidos" />
+                    android:text="Clave de fá" />
 
                 <RadioButton
                     android:id="@+id/radioButton52"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="5 sustenidos" />
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView32"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="2 tons e meio equivalem a"
-                android:textColor="@android:color/background_dark"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.039"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.017" />
-
-            <RadioGroup
-                android:id="@+id/radio_group6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/radioButton61"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="10 sustenidos" />
-
-                <RadioButton
-                    android:id="@+id/radioButton62"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="5 sustenidos" />
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView33"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Se A mede 440 hz, o A a três oitavas a direita irá medir:"
-                android:textColor="@android:color/background_dark"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.039"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.017" />
-
-            <RadioGroup
-                android:id="@+id/radio_group7"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/radioButton71"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="3520hz" />
-
-                <RadioButton
-                    android:id="@+id/radioButton72"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="880hz" />
-
-                <RadioButton
-                    android:id="@+id/radioButton73"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="220hz" />
-
-                <RadioButton
-                    android:id="@+id/radioButton74"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="1760hz" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView34"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Se A mede 440 hz, o A a 2 oitavas a esquerda irá medir: "
-                android:textColor="@android:color/background_dark"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.039"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.017" />
-
-            <RadioGroup
-                android:id="@+id/radio_group8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/radioButton81"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="330hz" />
-
-                <RadioButton
-                    android:id="@+id/radioButton82"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="880hz" />
-
-                <RadioButton
-                    android:id="@+id/radioButton83"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="220hz" />
-
-                <RadioButton
-                    android:id="@+id/radioButton84"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="110hz" />
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView35"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="E# pode representar qual nota?"
-                android:textColor="@android:color/background_dark"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.039"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.017" />
-
-            <RadioGroup
-                android:id="@+id/radio_group9"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/radioButton91"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="B" />
-
-                <RadioButton
-                    android:id="@+id/radioButton92"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="D" />
-
-                <RadioButton
-                    android:id="@+id/radioButton93"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="F" />
-
-                <RadioButton
-                    android:id="@+id/radioButton94"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Cb" />
-
-                <RadioButton
-                    android:id="@+id/radioButton95"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="C#" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView36"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Quantas notas musicais são possíveis de tocar em uma oitava de um piano? "
-                android:textColor="@android:color/background_dark"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.039"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.017" />
-
-            <RadioGroup
-                android:id="@+id/radio_group10"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/radioButton101"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="5" />
-
-                <RadioButton
-                    android:id="@+id/radioButton102"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="7" />
-
-                <RadioButton
-                    android:id="@+id/radioButton103"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="12" />
-
-                <RadioButton
-                    android:id="@+id/radioButton104"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="8" />
-
-                <RadioButton
-                    android:id="@+id/radioButton105"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="6" />
+                    android:text="Clave de sol" />
             </RadioGroup>
 
             <Button
@@ -638,4 +348,5 @@
 
         </LinearLayout>
     </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

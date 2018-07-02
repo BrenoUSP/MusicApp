@@ -54,7 +54,7 @@ public class lvl3_content extends AppCompatActivity {
         });
 
         Button but6 = (Button) findViewById(R.id.button6);
-        if(pref.getInt("level", 0) > 2){
+        if(pref.getInt("level", 0) > 3){
             but6.setVisibility(View.VISIBLE);
         }
 

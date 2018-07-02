@@ -56,9 +56,9 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText username = (EditText) findViewById(R.id.editText);
-                if(username.getText().length() < 4 || username.getText().length() > 12 || username.getText().toString().contains(" ")){
+                if(username.getText().length() < 4 || username.getText().length() > 10 || username.getText().toString().contains(" ")){
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(RegisterActivity.this);
-                    builder1.setMessage("O Nome do usuário deve ter entre 4 e 12 letras!. Sem espaços!");
+                    builder1.setMessage("O Nome do usuário deve ter entre 4 e 10 letras!. Sem espaços!");
                     builder1.setCancelable(true);
 
                     builder1.setPositiveButton(
@@ -88,6 +88,13 @@ public class RegisterActivity extends AppCompatActivity {
                     editor.putInt("level_teomus", 0);
 
                     editor.putInt("level_genre", 0);
+
+                    editor.putInt("nivelamento_teomus", 3);
+
+                    editor.putInt("nivelamento_instr", 3);
+
+                    editor.putInt("nivelamento_genre", 3);
+
 
                     String encodedImage = "";
 

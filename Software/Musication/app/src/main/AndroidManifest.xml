@@ -62,7 +62,8 @@
         <activity android:name=".lvl3_part_6" />
         <activity
             android:name=".lvl4_content"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".lvl1_teomus_3"></activity>
     </application>
 
 </manifest>

@@ -1,9 +1,11 @@
 package efestus.musication;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -39,9 +41,29 @@ public class lvl4_content extends AppCompatActivity {
         but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                SharedPreferences.Editor editor = pref.edit();
 
-                //Intent intent = new Intent(lvl4_content.this, lvl3_part_1.class); VAI PRO RITMO
-                //startActivity(intent);
+                if (pref.getInt("level_teomus", 0) == 4 && pref.getInt("level_instr", 0) == 4 && pref.getInt("level_genre", 0) == 4) {
+                    //Intent intent = new Intent(lvl4_content.this, lvl3_part_1.class); VAI PRO RITMO
+                    //startActivity(intent);
+                } else {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(lvl4_content.this);
+                    builder1.setMessage("Você precisa chegar ao fim de todos os ramos para fazer esse último módulo!");
+                    builder1.setCancelable(true);
+
+                    builder1.setPositiveButton(
+                            "Ok",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                }
+
             }
         });
 

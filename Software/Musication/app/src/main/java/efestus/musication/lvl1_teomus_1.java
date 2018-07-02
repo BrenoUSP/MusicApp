@@ -67,7 +67,7 @@ public class lvl1_teomus_1 extends AppCompatActivity {
                 if(pref.getInt("nivelamento_teomus", 0) != 0){
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(lvl1_teomus_1.this);
                     editor.putInt("nivelamento_teomus", pref.getInt("nivelamento_teomus", 0) - 1);
-                    builder1.setMessage("Você tem " + pref.getInt("nivelamento_teomus", 0) + " tentativas!");
+                    builder1.setMessage("Você tem " + pref.getInt("nivelamento_teomus", 0) + " tentativa(s)!");
 
                     builder1.setCancelable(true);
 

@@ -219,7 +219,7 @@ public class lvl1_teomus_2 extends AppCompatActivity {
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(lvl1_teomus_2.this);
                         editor.putInt("nivelamento_teomus", pref.getInt("nivelamento_teomus", 0) - 1);
                         editor.commit();
-                        builder1.setMessage("Você errou pelo menos uma questão! Você tem mais " + pref.getInt("nivelamento_teomus", 0) + " tentativas!");
+                        builder1.setMessage("Você errou pelo menos uma questão! Você tem mais " + pref.getInt("nivelamento_teomus", 0) + " tentativa(s)!");
                         points = 0;
                         clearRadio();
                         builder1.setCancelable(true);

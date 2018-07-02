@@ -53,6 +53,19 @@ public class lvl3_content extends AppCompatActivity {
             }
         });
 
+        Button but6 = (Button) findViewById(R.id.button6);
+        if(pref.getInt("level", 0) > 2){
+            but6.setVisibility(View.VISIBLE);
+        }
+
+        but6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(lvl3_content.this, lvl4_content.class);
+                startActivity(intent);
+            }
+        });
+
         Button but7 = (Button) findViewById(R.id.button7);
         but7.setOnClickListener(new View.OnClickListener() {
             @Override

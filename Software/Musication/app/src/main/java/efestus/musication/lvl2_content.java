@@ -45,7 +45,7 @@ public class lvl2_content extends AppCompatActivity {
                 SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
                 SharedPreferences.Editor editor = pref.edit();
 
-                if(pref.getInt("level_genre", 0) == 2){
+                if(pref.getInt("level_genre", 0) >= 2){
                     //Intent intent = new Intent(lvl2_content.this, lvl2_notmus_1.class);
                     //startActivity(intent);
                 } else {
@@ -74,7 +74,7 @@ public class lvl2_content extends AppCompatActivity {
                 SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
                 SharedPreferences.Editor editor = pref.edit();
 
-                if(pref.getInt("level_instr", 0) == 2){
+                if(pref.getInt("level_instr", 0) >= 2){
                     //Intent intent = new Intent(lvl2_content.this, lvl2_notmus_1.class);
                     //startActivity(intent);
                 } else {
@@ -103,7 +103,7 @@ public class lvl2_content extends AppCompatActivity {
                 SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
                 SharedPreferences.Editor editor = pref.edit();
 
-                if(pref.getInt("level_teomus", 0) == 2){
+                if(pref.getInt("level_teomus", 0) >= 2){
                     Intent intent = new Intent(lvl2_content.this, lvl2_notmus_1.class);
                     startActivity(intent);
                 } else {

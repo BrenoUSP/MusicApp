@@ -17,7 +17,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Nesta parte serão apresentados alguns conceitos básicos necessários para este caminho e em seguida será dado um pré-teste para que, caso você já tenha os conhecimentos necessários, avance alguns níveis."
-        android:textColor="@string/_2018_universidade_de_s_o_paulo"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

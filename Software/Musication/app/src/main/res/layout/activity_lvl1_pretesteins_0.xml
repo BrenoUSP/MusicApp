@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".lvl1_teomus_1">
+    tools:context=".lvl1_pretesteins_0">
+
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -34,7 +35,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Teoria Musical "
+                android:text="Instrumentos musicais"
                 android:textColor="@android:color/background_dark"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -47,14 +48,14 @@
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
-                android:layout_height="102dp"
+                android:layout_height="85dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Esse ramo de módulos tem o intuito de ensinar conteúdos mais teóricos da música como notas musicas, partitura e outros. Como os outros dois ramos, terá um momento que um módulo necessitará de uma parte de um ramo e uma parte de outro ramo. "
+                android:text="Esse ramo de módulo de o intuito de ensinar conteúdos relacionados aos instrumentos na música. Como os outros dois ramos, terá um momento que um módulo necessitará de uma parte de um ramo e uma parte de outro ramo."
                 android:textColor="@android:color/background_dark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -145,5 +146,6 @@
 
         </LinearLayout>
     </ScrollView>
+
 
 </android.support.constraint.ConstraintLayout>

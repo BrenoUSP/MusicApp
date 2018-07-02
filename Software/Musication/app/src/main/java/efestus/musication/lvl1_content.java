@@ -1,9 +1,11 @@
 package efestus.musication;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -35,6 +37,15 @@ public class lvl1_content extends AppCompatActivity {
             ImageView imageView = (ImageView) findViewById(R.id.imageView3);
             imageView.setImageBitmap(bitmap);
         }
+
+        Button but1 = (Button) findViewById(R.id.button1);
+        but1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                        Intent intent = new Intent(lvl1_content.this, lvl1_pretesteins_0.class);
+                        startActivity(intent);
+            }
+        });
 
         Button but2 = (Button) findViewById(R.id.button2);
         but2.setOnClickListener(new View.OnClickListener() {

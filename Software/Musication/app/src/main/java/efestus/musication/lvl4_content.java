@@ -12,12 +12,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class lvl3_content extends AppCompatActivity {
+public class lvl4_content extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lvl3_content);
+        setContentView(R.layout.activity_lvl4_content);
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
 
@@ -39,8 +39,8 @@ public class lvl3_content extends AppCompatActivity {
         but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(lvl3_content.this, lvl3_part_1.class);
-                startActivity(intent);
+                //Intent intent = new Intent(lvl4_content.this, lvl3_part_1.class); VAI PRO RITMO
+                //startActivity(intent);
             }
         });
 
@@ -48,7 +48,7 @@ public class lvl3_content extends AppCompatActivity {
         but5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(lvl3_content.this, lvl2_content.class);
+                Intent intent = new Intent(lvl4_content.this, lvl3_content.class);
                 startActivity(intent);
             }
         });
@@ -57,10 +57,9 @@ public class lvl3_content extends AppCompatActivity {
         but7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(lvl3_content.this, LoginActivity.class);
+                Intent intent = new Intent(lvl4_content.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
-
     }
 }

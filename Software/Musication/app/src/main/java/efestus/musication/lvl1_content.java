@@ -61,5 +61,14 @@ public class lvl1_content extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button but7 = (Button) findViewById(R.id.button7);
+        but7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(lvl1_content.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

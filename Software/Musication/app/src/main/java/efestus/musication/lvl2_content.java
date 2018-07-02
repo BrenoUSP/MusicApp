@@ -147,5 +147,14 @@ public class lvl2_content extends AppCompatActivity {
             }
         });
 
+        Button but7 = (Button) findViewById(R.id.button7);
+        but7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(lvl2_content.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

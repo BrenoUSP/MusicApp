@@ -43,7 +43,13 @@ Musication was a software project for the course SSC0724 - Advanced Learning Tec
 
 For more information about the course check [here](https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SSC0724&codcur=97001&codhab=0).
 
-The app has the object of teaching musical subjects using Gamification techniques as applications like Duolingo. There is three main subjects, Music Theory, Instruments and Genres. 
+The app has the object of teaching musical subjects using Gamification techniques as applications like Duolingo. There is three main subjects, Music Theory, Instruments and Genres.
+
+The members involved were:
+
+Breno Lívio, [@brenoslivio](https://github.com/brenoslivio/) 
+Daniel Eiji, [@DanielChiyo](https://github.com/DanielChiyo/)
+Lucas Albano, [@Tornom](https://github.com/Tornom)
 
 ![Product Name Screen Shot](https://raw.githubusercontent.com/brenoslivio/Musication/master/Documentos/Planejamento/Musication%20Tree.png)
 
